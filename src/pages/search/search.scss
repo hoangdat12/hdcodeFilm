@@ -1,0 +1,45 @@
+@use '../../scss/' as *;
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('https://raw.githubusercontent.com/trananhtuat/react-movie/main/src/assets/footer-bg.jpg');
+
+    .search__film {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #fff;
+        padding: 1rem 2rem;
+        min-width: 500px;
+        border-radius: 2rem ;
+        animation: search  1.5s ease;
+
+        @include mobile {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            width: 90%;
+            min-width: 200px ;
+            margin: 0 auto;
+        }
+
+        .search__input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            width: 85%;
+            font-size: 1.5rem;
+        }
+
+        .search__logo {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+}

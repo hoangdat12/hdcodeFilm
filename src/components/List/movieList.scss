@@ -1,0 +1,38 @@
+.movieList {
+    margin-top: 5rem;
+    position: relative;
+
+    .title {
+        margin-bottom: 1rem;
+        padding-right: 2rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .btns {
+            right: 6rem;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            cursor: pointer;
+
+            &:hover {
+                background-color: aquamarine;
+                color: #111;
+            }
+        }
+
+        .movie-title {
+            cursor: pointer;
+        }
+    }
+
+    .list__film {
+
+        img {
+            cursor: pointer;
+        }
+    }
+}

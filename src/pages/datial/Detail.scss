@@ -1,0 +1,166 @@
+@use '../../scss/' as *;
+
+.detail {
+    height: 100vh;
+    background-color: linear-gradient(rgba(52,73,94,.2549019607843137),#333 90%);
+
+    .detai__description {
+        height: 100%;
+        padding: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    
+        .detail__des__logo {
+            @include flex(center, flex-start);
+            position: relative;
+            // width: 45%;
+                // margin-left: 50px;
+    
+            img {
+                width: 300px;
+                border-radius: $border-radius;
+                box-shadow: $box-shadow;
+    
+                animation: animaImg 0.7s ease;
+            }
+        }
+    
+        .detail__des__info {
+            width: 55%;
+    
+            .detail__title {
+                font-weight: 700;
+                animation: animafilmHeader 0.7s ease;
+            }
+    
+            .detail__description {
+                font-size: 1.1rem;
+                margin: 1rem 0;
+                animation: animafilmHeader 1s ease;
+            }
+    
+            .release_date {
+                font-size: 1.1rem;
+                animation: animafilmHeader 0.9s ease;
+            }
+    
+            .detail__type {
+                margin: 1rem 0;
+                animation: animafilmHeader 0.8s ease;
+    
+                .type {
+                    margin-right: 1rem;
+                    padding: 5px 10px ;
+                    border-radius: 50px;
+                    border: 3px solid #fff;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background-color: $body-bg;
+                    }
+                }
+            }
+    
+            .detail__vote {
+                display: flex;
+                align-items: center;
+                animation: animafilmHeader 0.7s ease;
+    
+                .star {
+                    margin-right: 1rem;
+                    color: yellow;
+                    font-size: 1.1rem;
+                }
+    
+                .vote {
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                }
+            }
+    
+            .btns {
+                margin-top: 1rem;
+                animation: animafilmHeader 0.6s ease;
+    
+                button {
+                    padding: 10px 20px;
+                    background-color: #34495e;
+                    border: none;
+                    border-radius: 10px;
+                    margin-right: 1rem;
+                    color: #fff;
+                    font-weight: 400;
+    
+                    &:hover {
+                        background-color: $body-bg;
+                    }
+                }
+    
+                .heart {
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+
+                .active {
+                    color: red;
+                }
+            }
+        }
+    
+        .homepage {
+            position: absolute;
+            bottom: 3rem;
+            right: 3rem;
+            z-index: 90;
+    
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+}
+
+@include mobile {
+    .detail {
+
+        .detai__description {
+            padding: 2rem;
+            display: block;
+
+            .detail__des__logo {
+                margin-bottom: 10px;
+
+                img {
+                    width: 250px;
+                }
+            }
+
+            .detail__des__info {
+                width: 100%;
+
+                .detail__title {
+                    font-size: 2rem;
+                }
+
+                .detail__description {
+                    font-size: 1.3rem;
+                }
+
+                .release_date {
+                    font-size: 1.5rem;
+                }
+
+                .detail__type {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

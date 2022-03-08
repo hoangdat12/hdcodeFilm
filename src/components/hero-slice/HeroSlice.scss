@@ -1,0 +1,183 @@
+@use '../../scss/' as *;
+
+.hero-slice__item {
+    height: 100vh;
+    padding: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+    // position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .hero-slice__item__info {
+        width: 55%;
+        color: #fff;
+
+        .name-film {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .content-film {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 30px 0;
+        }
+
+        .btns {
+
+            .watch-film {
+                min-width: 200px;
+                padding:0.3rem 1.2rem;
+                border: 4px solid transparent;
+                border-radius: $border-radius;
+                outline: none;
+                font-size: 1.2rem;
+                color: #fff;
+                font-weight: 400;
+                background-color: $main-color;
+
+                box-shadow: 0px 0px 7px 8px #ff00004d;
+                transition: box-shadow 0.3s ease;
+                position: relative;
+                margin-right: 30px
+            }
+
+            .trailer-film {
+                min-width: 200px;
+                padding:0.3rem 1.2rem;
+                font-size: 1.2rem;
+                font-weight: 400;
+                border: 3px solid $white;
+                background-color: transparent;
+                border-radius: $border-radius;
+                color: $white;
+                box-shadow: unset;
+                transition: color 0.3s ease, background-color 0.3s ease;
+            }
+        }
+
+        .btns,
+        .name-film,
+        .content-film {
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+    }
+
+    .hero-slice__item__poster {
+            @include flex(center, flex-start);
+            position: relative;
+            // margin-left: 50px;
+
+            img {
+                width: 300px;
+                border-radius: $border-radius;
+                box-shadow: $box-shadow;
+
+                transform: scale(0);
+                transition: transform 0.7s ease;
+            }
+            
+
+    }
+
+    &.active > .hero-slice__item__poster{
+        img {
+            transform: scale(1);
+        }
+    }
+
+    &.active > .hero-slice__item__info {
+        .btns,
+        .name-film,
+        .content-film {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .name-film {
+            transition-delay: 0.3s, 0.3s;
+        }
+
+        .content-film {
+            transition-delay: 0.6s, 0.6s;
+        }
+
+        .btns {
+            transition-delay: 0.9s, 0.9s;
+        }
+    }
+}
+
+.modal-trailer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    .modal__content {
+        width: 50%;
+        height: 60%;
+        background-color: #fff;
+        margin: auto;
+        animation: modal 0.6s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $body-bg;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.hero-slice {
+    @include mobile {
+        .hero-slice__item {
+            padding: 2rem;
+            display: block;
+    
+            .hero-slice__item__poster {
+                margin-bottom: 10px;
+    
+                img {
+                    width: 250px;
+                }
+            }
+    
+            .hero-slice__item__info {
+                width: 100%;
+    
+                .name-film {
+                    font-size: 2rem;
+                }
+    
+                .content-film {
+                    font-size: 1.3rem;
+                }
+    
+                    // .release_date {
+                    //     font-size: 1.5rem;
+                    // }
+    
+                    // .detail__type {
+                    //     display: flex;
+                    //     align-items: center;
+                    // }
+            }
+        }
+    }
+}
+

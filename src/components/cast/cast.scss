@@ -1,0 +1,31 @@
+.cast {
+    padding: 5rem;
+    background-color: #333;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        color: aqua;
+    }
+
+    .cast__film {
+        width: 100%;
+        position: relative;
+
+        .cast__name {
+            position: absolute;
+            top: 70%;
+            left: 5px;
+
+            .name {
+                margin-bottom: 0;
+            }
+
+            .charactor {
+                color: #f1c40f;
+            }
+        }
+    }
+}

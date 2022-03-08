@@ -1,0 +1,129 @@
+@use '../../scss/' as *;
+
+.footer {
+    background-color: #333;
+    box-shadow: $box-shadow ;
+    margin-top: 4rem;
+    padding: 3rem 0;
+
+    .row {
+        margin: 0 auto !important;
+        width: 90%;
+
+
+        .footer__title {
+            display: flex;
+            justify-content: center;
+            padding-top: 2rem;
+        }
+
+        .footer__list {
+            display: flex;
+            padding-left: 0;
+            padding-top: 1rem;
+            justify-content: center;
+
+            .footer__item {
+                margin-right: 10px; 
+
+                .footer__link {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .input__name {
+            border-radius: 10px;
+            border: 2px solid #fff;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-center;
+            width: 80%;
+            margin: auto;
+            margin-top: 1.5rem;
+
+            input {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                width: 70%;
+                color: #fff;
+                font-size: 1.5rem;
+            }
+
+            button {
+                padding: 3px 15px;
+                border: 2px solid transparent;
+                background-color: transparent;
+                font-size: 1.2rem;
+                font-weight: 400;
+
+                &:hover {
+                    border: 2px solid #fff;
+                    background-color: bisque;
+                    border-radius: 10px ;
+                }
+
+                @include mobile {
+                    padding: 0;
+                }
+            }
+        }
+
+        .prize-btn {
+            display: none;
+            justify-content: center;
+            animation: search 0.5s ease-in;
+            margin-top: 1.5rem;
+
+            button {
+                padding: 10px 25px ;
+                border-radius: 10px;
+                border: 1px solid #fff;
+                background-color: rgb(61, 7, 59);
+                color: #fff;
+            }
+        }
+
+        .prize {
+            display: none;
+            margin-top: 2rem;
+            animation: animaImg 1s ease-in;
+
+            h4 {
+                display: flex;
+                justify-content: center;
+            }
+
+            .img {
+                margin: auto;
+                border-radius: 50%;
+                width: 60%;
+
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+                font-size: 2rem;
+                color: red;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: flex !important;
+}
+
+.show1 {
+    display: block !important;
+}
